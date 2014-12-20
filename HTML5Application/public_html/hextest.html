@@ -9,8 +9,71 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/hexes.css">
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                loadMap();
+            }); // end of ready
+            
+            function loadMap () {
+                    // we use these to monitor the loops
+                    // max of 31
+                    var hexes = 0;
+                    // max of 4
+                    var c1 = 0;
+                    // max of 5
+                    var c2 = 0;
+                    // max of 6
+                    var c3 = 0;
+                    // max of 7
+                    var c4 = 0;
+                    // max of 6
+                    var c5 = 0;
+                    // max of 5
+                    var c6 = 0;
+                    // max of 4
+                    var c7 = 0;
+                    // used to add in each hex to the map
+                    for (hexes; hexes < 32; hexes++)
+                    {
+                        if (c1 < 4) {
+                            c1++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c1+"'></div></div>");
+                        }
+                        else if (c2 < 5) {
+                            c2++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c2+"'></div></div>");
+                        }
+                        else if (c3 < 6) {
+                            c3++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c3+"'></div></div>");
+                        }
+                        else if (c4 < 7) {
+                            c4++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c4+"'></div></div>");
+                        }
+                        else if (c5 < 6) {
+                            c5++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c5+"'></div></div>");
+                        }
+                        else if (c6 < 5) {
+                            c6++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c6+"'></div></div>");
+                        }
+                        else if (c7 < 4) {
+                            c7++;
+                            $("#map").append("<div class='hex' id='"+hexes+"'><div class='"+c7+"'></div></div>");
+                        }
+                        
+                    } // end of for loop
+                    
+                } // end of loadMap
+        </script>      
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="map">Map</div>
     </body>
 </html>
